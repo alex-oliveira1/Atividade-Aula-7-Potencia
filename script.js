@@ -1,12 +1,26 @@
 function potencia(numero, expoente){
-    
-    if (expoente===0){
-        return 1;
+    let resultado=numero;
+    if (expoente<0){
+    for(let i=expoente; i<-1;i++){
+        resultado*=numero;
     }
-    let resultado= numero;
+    }
+    else{
     for(let i=1; i<expoente;i++){
         resultado *=numero;
     }
+    }    
+    if (expoente===0 && numero===0){
+        return "não definido";
+    }
+    else if (expoente===0 && numero!==0){
+        return 1;
+    }
+    else if (expoente<0){
+        return "1/"+resultado;
+    }
+    
+
     return resultado;
 }
-alert(potencia(5,0));
+alert(potencia(3,-2));
